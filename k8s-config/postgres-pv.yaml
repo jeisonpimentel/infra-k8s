@@ -6,9 +6,10 @@ spec:
   capacity:
     storage: 2Gi
   volumeMode: Filesystem
-  storageClassName: standard
+  storageClassName: ""
   accessModes:
     - ReadWriteOnce
-  hostPath:
-    path: /var/lib/postgres/data
-    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Retain
+  gcePersistentDisk:
+    pdName: postgres-disk
+    fsType: ext4

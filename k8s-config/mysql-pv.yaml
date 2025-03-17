@@ -6,9 +6,10 @@ spec:
   capacity:
     storage: 2Gi
   volumeMode: Filesystem
-  storageClassName: standard
+  storageClassName: ""
   accessModes:
     - ReadWriteOnce
-  hostPath:
-    path: /var/lib/mysql
-    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Retain
+  gcePersistentDisk:
+    pdName: mysql-disk
+    fsType: ext4
