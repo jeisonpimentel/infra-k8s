@@ -29,6 +29,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: msvc-cursos
+  namespace: dev
 data:
   port: "8002"
   db_host: postgres14:5432
