@@ -37,17 +37,19 @@ jobs:
 
       - name: 🚀 Deploy MySQL & PostgreSQL
         run: |
-          kubectl apply -f k8s-config/configmap.yaml
-          kubectl apply -f k8s-config/secret.yaml
-          kubectl apply -f k8s-config/mysql-pv.yaml
-          kubectl apply -f k8s-config/mysql-pvc.yaml
-          kubectl apply -f k8s-config/postgres-pv.yaml
-          kubectl apply -f k8s-config/postgres-pvc.yaml
+          kubectl apply -f k8s-config/configmaps/configmap.yaml
+          kubectl apply -f k8s-config/secrets/secret.yaml
+          kubectl apply -f k8s-config/volumes/pv/mysql-pv.yaml
+          kubectl apply -f k8s-config/volumes/pvc/mysql-pvc.yaml
+          kubectl apply -f k8s-config/volumes/pv/postgres-pv.yaml
+          kubectl apply -f k8s-config/volumes/pvc/postgres-pvc.yaml
 
-          kubectl apply -f k8s-config/deployment-mysql.yaml
-          kubectl apply -f k8s-config/deployment-postgres.yaml
-          kubectl apply -f k8s-config/svc-mysql.yaml
-          kubectl apply -f k8s-config/svc-postgres.yaml
+          kubectl apply -f k8s-config/deployments/deployment-mysql.yaml
+          kubectl apply -f k8s-config/deployments/deployment-postgres.yaml
+          kubectl apply -f k8s-config/services/svc-mysql.yaml
+          kubectl apply -f k8s-config/services/svc-postgres.yaml
+          
+          kubectl apply -f k8s-config/rbac/
 
           kubectl rollout status deployment/mysql8
           kubectl rollout status deployment/postgres14
