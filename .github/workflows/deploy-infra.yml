@@ -40,11 +40,14 @@ jobs:
 
       - name: 🚀 Deploy RBAC (Roles y Permisos)
         run: |
-          kubectl apply -f k8s-config/rbac/
+          kubectl apply -f k8s-config/rbac/serviceaccount.yaml
+          kubectl apply -f k8s-config/rbac/role.yaml
+          kubectl apply -f k8s-config/rbac/role-binding.yaml
+          kubectl apply -f k8s-config/rbac/sa-token.yaml
 
       - name: 🚀 Deploy ConfigMaps & Secrets
         run: |
-          kubectl apply -f k8s-config/configmaps/
+          kubectl apply -f k8s-config/configmaps/ 
           kubectl apply -f k8s-config/secrets/
 
       - name: 🚀 Deploy Persistent Volumes & Claims
