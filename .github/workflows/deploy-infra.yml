@@ -61,5 +61,5 @@ jobs:
 
       - name: 🚀 Verify Deployments are Running
         run: |
-          kubectl rollout status deployment/mysql8 --timeout=120s
-          kubectl rollout status deployment/postgres14 --timeout=120s
+          kubectl rollout status deployment/mysql8 --timeout=120s -n dev
+          kubectl rollout status deployment/postgres14 --timeout=120s -n dev
