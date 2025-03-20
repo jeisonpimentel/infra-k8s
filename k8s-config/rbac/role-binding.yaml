@@ -6,7 +6,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: microservice-sa
-    namespace: default
+    namespace: dev
 roleRef:
   kind: ClusterRole
   name: microservice-role
