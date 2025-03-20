@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: msvc-usuarios
+  namespace: dev
 data:
   port: "8001"
   db_host: mysql8:3306
