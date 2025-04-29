@@ -43,7 +43,7 @@ jobs:
           kubectl apply -f k8s-config/rbac/serviceaccount.yaml
           kubectl apply -f k8s-config/rbac/role.yaml
           kubectl apply -f k8s-config/rbac/role-binding.yaml
-          kubectl apply -f k8s-config/rbac/sa-token.yaml
+          kubectl apply -f k8s-config/rbac/sa-token.yaml 
 
       - name: 🚀 Deploy ConfigMaps & Secrets
         run: |
